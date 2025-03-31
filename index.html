@@ -34,7 +34,8 @@
           border-secondaryColor md:block md:static md:py-0 md:border-none md:w-auto md:ml-auto" id="nav-menu">
         <ul class="flex flex-col text-center gap-5 md:flex-row">
           <li>
-            <a href="#home" class="nav__link text-secondaryColor hover:text-secondaryColor  ease-in duration-200">Home</a>
+            <a href="#home"
+              class="nav__link text-secondaryColor hover:text-secondaryColor  ease-in duration-200">Home</a>
           </li>
           <li>
             <a href="#about" class=" nav__link hover:text-secondaryColor ease-in duration-200">About</a>
@@ -714,7 +715,8 @@
             </div>
           </li>
         </ul>
-        <div class="flex flex-col items-center border-t border-primaryColorLight dark:border-darkColorLight py-5 md:flex-raw md:justify-between">
+        <div
+          class="flex flex-col items-center border-t border-primaryColorLight dark:border-darkColorLight py-5 md:flex-raw md:justify-between">
           <p class="paragraph">Burger Template Kit by light Code</p>
           <p class="paragraph">Copyright © 2025. All rights reserved.</p>
         </div>
@@ -759,12 +761,42 @@
   </script>
 
   <!---------------------------Scroll Reveal------------------------>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/2.0.0/scrollReveal.min.js" integrity="sha512-L56hqljAjZhvB9f32klSO2ltXUlKbaOY2KdlNLOdzxJtl0jNvNQFKTP3u0MIFUP3mXTzYdy7KCaUSvi7QBWxNg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const sr = ScrollReveal({
+        origin: "top",
+        distance: "60px",
+        duration: 2500,
+        delay: 400
+      })
+
+
+      sr.reveal(".home__image");
+      sr.reveal(".home__content", { origin: "bottom" });
+      sr.reveal(".category__card", { interval: 300 })
+
+      sr.reveal(".promo__card-1", { origin: "left" });
+      sr.reveal(".promo__card-2", { origin: "right" });
+
+
+      sr.reveal(".about__img", { origin: "bottom" });
+      sr.reveal(".about__content", { origin: "top" });
+
+      sr.reveal(".menu__items", { origin: "left" });
+
+
+      sr.reveal(".customer__review", { origin: "right" });
+
+      sr.reveal(".footer");
+    })
+  </script>
 
   <a href="#" class="fixed right-4 bottom-4 bg-secondaryColor shadow-sm inline-block px-4 py-2 rounded-full text-lg text-blackColor
   z-50 hover:-translate-y-1 ease-in duration-200" id="scroll-up">
     <i class="fa-solid fa-arrow-up"></i>
-    
+
   </a>
   <!---------------------------Main.Js------------------------>
   <script src="./main.js"></script>
